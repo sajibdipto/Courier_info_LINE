@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="HomePGPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MnjCourierInformationLineVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="MnjCourierInformationLineVO1Iterator"/>
+    <searchRegion Binds="MnjCourierInformationLineVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="MnjCourierInformationLineVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="MnjCourierInformationLineVO1Iterator"
+          id="MnjCourierInformationLineVO1">
+      <nodeDefinition DefName="model.View.MnjCourierInformationLineVO"
+                      Name="MnjCourierInformationLineVO10">
+        <AttrNames>
+          <Item Value="CourierId"/>
+          <Item Value="AwbId"/>
+          <Item Value="CourierName"/>
+          <Item Value="ImportExport"/>
+          <Item Value="CourierDate"/>
+          <Item Value="Buyer"/>
+          <Item Value="Season"/>
+          <Item Value="ItemCode"/>
+          <Item Value="Qty"/>
+          <Item Value="OrgId"/>
+          <Item Value="ConcigneeUnit"/>
+          <Item Value="PayeeUnit"/>
+          <Item Value="SupplierCountry"/>
+          <Item Value="ValuePrice"/>
+          <Item Value="Currency"/>
+          <Item Value="PackageQty"/>
+          <Item Value="Item"/>
+          <Item Value="CnfAgentName"/>
+          <Item Value="ProcessIndicatorFlag"/>
+          <Item Value="MerchantReceivedBy"/>
+          <Item Value="QtyYard"/>
+          <Item Value="StdPrice"/>
+          <Item Value="TotalBudgetQty"/>
+          <Item Value="Consumption"/>
+          <Item Value="Status"/>
+          <Item Value="StatusDetail"/>
+          <Item Value="HeaderId"/>
+          <Item Value="BuyerId"/>
+          <Item Value="DevSampleBulk"/>
+          <Item Value="Unit"/>
+          <Item Value="SenderUnit"/>
+          <Item Value="DeliveryLocation"/>
+          <Item Value="UserName"/>
+          <Item Value="StyleNumber"/>
+          <Item Value="BpoNumber"/>
+          <Item Value="DocRcvdDate"/>
+          <Item Value="ExpectedDeliveryDate"/>
+          <Item Value="ActualDeliveryDate"/>
+          <Item Value="SampleDocNo"/>
+          <Item Value="VersionNo"/>
+          <Item Value="VersionDate"/>
+          <Item Value="RespId"/>
+          <Item Value="UserId"/>
+          <Item Value="CreationDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="LastUpdateDate"/>
+          <Item Value="LastUpdatedBy"/>
+          <Item Value="Uom"/>
+          <Item Value="KnowStyle"/>
+          <Item Value="InvoiceNo"/>
+          <Item Value="InvoiceDate"/>
+          <Item Value="Weight"/>
+          <Item Value="WeightType"/>
+          <Item Value="UdNo"/>
+          <Item Value="ExportLcNo"/>
+          <Item Value="DocHandoverDate"/>
+          <Item Value="DeliveryDate"/>
+          <Item Value="Remarks"/>
+          <Item Value="RemarksCommercial"/>
+          <Item Value="NeedDetails"/>
+          <Item Value="NeedDetailsCommercial"/>
+          <Item Value="CompletionFlag"/>
+          <Item Value="CompletionFlagCommercial"/>
+          <Item Value="ProcessIndicatorCommerFlag"/>
+          <Item Value="CostCenterCode"/>
+          <Item Value="ItemCodeCombination"/>
+          <Item Value="TotBudgetAmt"/>
+          <Item Value="Amount"/>
+          <Item Value="Status1"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

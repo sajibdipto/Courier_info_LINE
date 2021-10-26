@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__4">
+    <managed-bean-name id="__2">ApproveBean</managed-bean-name>
+    <managed-bean-class id="__3">Approve.ApproveBean</managed-bean-class>
+    <managed-bean-scope id="__1">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name id="__7">asd</managed-bean-name>
+    <managed-bean-class id="__5">asdd.asd</managed-bean-class>
+    <managed-bean-scope id="__8">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__10">
+    <managed-bean-name id="__9">ApprovedBean</managed-bean-name>
+    <managed-bean-class id="__12">Approve.ApprovedBean</managed-bean-class>
+    <managed-bean-scope id="__11">request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

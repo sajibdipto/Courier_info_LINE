@@ -1,0 +1,1077 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelHeader text="panelHeader 1" id="ph1"
+                        styleClass="AFStretchWidth">
+          <f:facet name="context"/>
+          <f:facet name="menuBar"/>
+          <f:facet name="toolbar"/>
+          <f:facet name="legend"/>
+          <f:facet name="info"/>
+          <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+            <f:facet name="menus"/>
+            <f:facet name="toolbar">
+              <af:toolbar id="t2">
+                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                  text="Save"
+                                  id="cb1"/>
+              </af:toolbar>
+            </f:facet>
+            <f:facet name="statusbar"/>
+            <af:table value="#{bindings.MnjCourierInformationLineVO1.collectionModel}"
+                      var="row"
+                      rows="#{bindings.MnjCourierInformationLineVO1.rangeSize}"
+                      emptyText="#{bindings.MnjCourierInformationLineVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.MnjCourierInformationLineVO1.rangeSize}"
+                      rowBandingInterval="0"
+                      filterModel="#{bindings.MnjCourierInformationLineVO1Query.queryDescriptor}"
+                      queryListener="#{bindings.MnjCourierInformationLineVO1Query.processQuery}"
+                      filterVisible="true" varStatus="vs"
+                      selectedRowKeys="#{bindings.MnjCourierInformationLineVO1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.MnjCourierInformationLineVO1.collectionModel.makeCurrent}"
+                      rowSelection="single" id="t1" styleClass="AFStretchWidth"
+                      visible="true">
+              <af:column sortProperty="CourierId" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.CourierId.label}"
+                         id="c36">
+                <af:inputText value="#{row.bindings.CourierId.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.CourierId.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.CourierId.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.CourierId.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.CourierId.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.CourierId.tooltip}"
+                              id="it2">
+                  <f:validator binding="#{row.bindings.CourierId.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.CourierId.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="AwbId" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.AwbId.label}"
+                         id="c54">
+                <af:inputText value="#{row.bindings.AwbId.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.AwbId.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.AwbId.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.AwbId.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.AwbId.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.AwbId.tooltip}"
+                              id="it14">
+                  <f:validator binding="#{row.bindings.AwbId.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="CourierName" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.CourierName.label}"
+                         id="c30">
+                <af:inputText value="#{row.bindings.CourierName.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.CourierName.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.CourierName.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.CourierName.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.CourierName.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.CourierName.tooltip}"
+                              id="it49">
+                  <f:validator binding="#{row.bindings.CourierName.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="ImportExport" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.ImportExport.label}"
+                         id="c18">
+                <af:inputText value="#{row.bindings.ImportExport.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.ImportExport.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.ImportExport.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.ImportExport.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.ImportExport.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.ImportExport.tooltip}"
+                              id="it10">
+                  <f:validator binding="#{row.bindings.ImportExport.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="Status" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.Status.label}"
+                         id="c68">
+                <af:inputText value="#{row.bindings.Status.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.Status.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.Status.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.Status.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.Status.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.Status.tooltip}"
+                              id="it8">
+                  <f:validator binding="#{row.bindings.Status.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.Status.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="StatusDetail" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.StatusDetail.label}"
+                         id="c43">
+                <af:selectOneChoice value="#{row.bindings.StatusDetail.inputValue}"
+                                    label="#{row.bindings.StatusDetail.label}"
+                                    required="#{bindings.MnjCourierInformationLineVO1.hints.StatusDetail.mandatory}"
+                                    shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.StatusDetail.tooltip}"
+                                    id="soc1" autoSubmit="true">
+                  <f:selectItems value="#{row.bindings.StatusDetail.items}"
+                                 id="si1"/>
+                </af:selectOneChoice>
+              </af:column>
+              <af:column headerText="#{bindings.MnjCourierInformationLineVO1.hints.Status1.label}"
+                         id="c70" sortable="true" filterable="true"
+                         sortProperty="Status">
+                <af:inputText value="#{row.bindings.Status1.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.Status1.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.Status1.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.Status1.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.Status1.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.Status1.tooltip}"
+                              id="it41">
+                  <f:validator binding="#{row.bindings.Status1.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column id="c69">
+                <af:commandButton text="Approve" id="cb2"
+                                  binding="#{ApprovedBean.approveStatus}"
+                                  actionListener="#{ApprovedBean.ApproveBtn}"
+                                  action="*resultPage"/>
+              </af:column>
+              <af:column sortProperty="CourierDate" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.CourierDate.label}"
+                         id="c63">
+                <f:facet name="filter">
+                  <af:inputDate value="#{vs.filterCriteria.CourierDate}"
+                                id="id17"/>
+                </f:facet>
+                <af:inputDate value="#{row.bindings.CourierDate.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.CourierDate.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.CourierDate.mandatory}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.CourierDate.tooltip}"
+                              id="id12">
+                  <f:validator binding="#{row.bindings.CourierDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.MnjCourierInformationLineVO1.hints.CourierDate.format}"/>
+                </af:inputDate>
+              </af:column>
+              <af:column sortProperty="Buyer" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.Buyer.label}"
+                         id="c7">
+                <af:inputText value="#{row.bindings.Buyer.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.Buyer.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.Buyer.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.Buyer.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.Buyer.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.Buyer.tooltip}"
+                              id="it31">
+                  <f:validator binding="#{row.bindings.Buyer.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="Season" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.Season.label}"
+                         id="c65">
+                <af:inputText value="#{row.bindings.Season.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.Season.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.Season.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.Season.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.Season.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.Season.tooltip}"
+                              id="it35">
+                  <f:validator binding="#{row.bindings.Season.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="ItemCode" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.ItemCode.label}"
+                         id="c50">
+                <af:inputText value="#{row.bindings.ItemCode.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.ItemCode.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.ItemCode.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.ItemCode.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.ItemCode.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.ItemCode.tooltip}"
+                              id="it7">
+                  <f:validator binding="#{row.bindings.ItemCode.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="Qty" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.Qty.label}"
+                         id="c29">
+                <af:inputText value="#{row.bindings.Qty.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.Qty.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.Qty.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.Qty.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.Qty.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.Qty.tooltip}"
+                              id="it45">
+                  <f:validator binding="#{row.bindings.Qty.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.Qty.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="OrgId" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.OrgId.label}"
+                         id="c8">
+                <af:inputText value="#{row.bindings.OrgId.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.OrgId.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.OrgId.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.OrgId.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.OrgId.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.OrgId.tooltip}"
+                              id="it19">
+                  <f:validator binding="#{row.bindings.OrgId.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.OrgId.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="ConcigneeUnit" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.ConcigneeUnit.label}"
+                         id="c52">
+                <af:inputText value="#{row.bindings.ConcigneeUnit.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.ConcigneeUnit.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.ConcigneeUnit.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.ConcigneeUnit.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.ConcigneeUnit.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.ConcigneeUnit.tooltip}"
+                              id="it52">
+                  <f:validator binding="#{row.bindings.ConcigneeUnit.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="PayeeUnit" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.PayeeUnit.label}"
+                         id="c56">
+                <af:inputText value="#{row.bindings.PayeeUnit.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.PayeeUnit.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.PayeeUnit.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.PayeeUnit.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.PayeeUnit.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.PayeeUnit.tooltip}"
+                              id="it5">
+                  <f:validator binding="#{row.bindings.PayeeUnit.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="SupplierCountry" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.SupplierCountry.label}"
+                         id="c53">
+                <af:inputText value="#{row.bindings.SupplierCountry.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.SupplierCountry.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.SupplierCountry.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.SupplierCountry.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.SupplierCountry.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.SupplierCountry.tooltip}"
+                              id="it40">
+                  <f:validator binding="#{row.bindings.SupplierCountry.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="ValuePrice" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.ValuePrice.label}"
+                         id="c9">
+                <af:inputText value="#{row.bindings.ValuePrice.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.ValuePrice.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.ValuePrice.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.ValuePrice.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.ValuePrice.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.ValuePrice.tooltip}"
+                              id="it48">
+                  <f:validator binding="#{row.bindings.ValuePrice.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.ValuePrice.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="Currency" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.Currency.label}"
+                         id="c24">
+                <af:inputText value="#{row.bindings.Currency.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.Currency.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.Currency.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.Currency.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.Currency.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.Currency.tooltip}"
+                              id="it6">
+                  <f:validator binding="#{row.bindings.Currency.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="PackageQty" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.PackageQty.label}"
+                         id="c39">
+                <af:inputText value="#{row.bindings.PackageQty.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.PackageQty.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.PackageQty.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.PackageQty.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.PackageQty.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.PackageQty.tooltip}"
+                              id="it43">
+                  <f:validator binding="#{row.bindings.PackageQty.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.PackageQty.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="Item" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.Item.label}"
+                         id="c55">
+                <af:inputText value="#{row.bindings.Item.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.Item.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.Item.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.Item.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.Item.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.Item.tooltip}"
+                              id="it42">
+                  <f:validator binding="#{row.bindings.Item.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="CnfAgentName" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.CnfAgentName.label}"
+                         id="c21">
+                <af:inputText value="#{row.bindings.CnfAgentName.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.CnfAgentName.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.CnfAgentName.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.CnfAgentName.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.CnfAgentName.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.CnfAgentName.tooltip}"
+                              id="it56">
+                  <f:validator binding="#{row.bindings.CnfAgentName.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="ProcessIndicatorFlag" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.ProcessIndicatorFlag.label}"
+                         id="c23">
+                <af:inputText value="#{row.bindings.ProcessIndicatorFlag.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.ProcessIndicatorFlag.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.ProcessIndicatorFlag.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.ProcessIndicatorFlag.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.ProcessIndicatorFlag.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.ProcessIndicatorFlag.tooltip}"
+                              id="it50">
+                  <f:validator binding="#{row.bindings.ProcessIndicatorFlag.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="MerchantReceivedBy" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.MerchantReceivedBy.label}"
+                         id="c12">
+                <af:inputText value="#{row.bindings.MerchantReceivedBy.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.MerchantReceivedBy.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.MerchantReceivedBy.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.MerchantReceivedBy.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.MerchantReceivedBy.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.MerchantReceivedBy.tooltip}"
+                              id="it11">
+                  <f:validator binding="#{row.bindings.MerchantReceivedBy.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="QtyYard" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.QtyYard.label}"
+                         id="c14">
+                <af:inputText value="#{row.bindings.QtyYard.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.QtyYard.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.QtyYard.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.QtyYard.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.QtyYard.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.QtyYard.tooltip}"
+                              id="it32">
+                  <f:validator binding="#{row.bindings.QtyYard.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.QtyYard.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="StdPrice" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.StdPrice.label}"
+                         id="c51">
+                <af:inputText value="#{row.bindings.StdPrice.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.StdPrice.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.StdPrice.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.StdPrice.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.StdPrice.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.StdPrice.tooltip}"
+                              id="it15">
+                  <f:validator binding="#{row.bindings.StdPrice.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.StdPrice.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="TotalBudgetQty" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.TotalBudgetQty.label}"
+                         id="c46">
+                <af:inputText value="#{row.bindings.TotalBudgetQty.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.TotalBudgetQty.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.TotalBudgetQty.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.TotalBudgetQty.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.TotalBudgetQty.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.TotalBudgetQty.tooltip}"
+                              id="it27">
+                  <f:validator binding="#{row.bindings.TotalBudgetQty.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.TotalBudgetQty.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="Consumption" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.Consumption.label}"
+                         id="c41">
+                <af:inputText value="#{row.bindings.Consumption.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.Consumption.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.Consumption.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.Consumption.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.Consumption.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.Consumption.tooltip}"
+                              id="it16">
+                  <f:validator binding="#{row.bindings.Consumption.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.Consumption.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="HeaderId" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.HeaderId.label}"
+                         id="c6" visible="false">
+                <af:inputText value="#{row.bindings.HeaderId.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.HeaderId.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.HeaderId.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.HeaderId.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.HeaderId.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.HeaderId.tooltip}"
+                              id="it33">
+                  <f:validator binding="#{row.bindings.HeaderId.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.HeaderId.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="BuyerId" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.BuyerId.label}"
+                         id="c58" visible="false">
+                <af:inputText value="#{row.bindings.BuyerId.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.BuyerId.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.BuyerId.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.BuyerId.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.BuyerId.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.BuyerId.tooltip}"
+                              id="it9">
+                  <f:validator binding="#{row.bindings.BuyerId.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.BuyerId.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="DevSampleBulk" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.DevSampleBulk.label}"
+                         id="c25" visible="false">
+                <af:inputText value="#{row.bindings.DevSampleBulk.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.DevSampleBulk.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.DevSampleBulk.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.DevSampleBulk.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.DevSampleBulk.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.DevSampleBulk.tooltip}"
+                              id="it12">
+                  <f:validator binding="#{row.bindings.DevSampleBulk.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="Unit" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.Unit.label}"
+                         id="c22" visible="false">
+                <af:inputText value="#{row.bindings.Unit.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.Unit.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.Unit.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.Unit.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.Unit.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.Unit.tooltip}"
+                              id="it37">
+                  <f:validator binding="#{row.bindings.Unit.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="SenderUnit" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.SenderUnit.label}"
+                         id="c1" visible="false">
+                <af:inputText value="#{row.bindings.SenderUnit.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.SenderUnit.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.SenderUnit.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.SenderUnit.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.SenderUnit.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.SenderUnit.tooltip}"
+                              id="it58">
+                  <f:validator binding="#{row.bindings.SenderUnit.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="DeliveryLocation" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.DeliveryLocation.label}"
+                         id="c2" visible="false">
+                <af:inputText value="#{row.bindings.DeliveryLocation.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.DeliveryLocation.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.DeliveryLocation.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.DeliveryLocation.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.DeliveryLocation.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.DeliveryLocation.tooltip}"
+                              id="it57">
+                  <f:validator binding="#{row.bindings.DeliveryLocation.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="UserName" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.UserName.label}"
+                         id="c47" visible="false">
+                <af:inputText value="#{row.bindings.UserName.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.UserName.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.UserName.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.UserName.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.UserName.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.UserName.tooltip}"
+                              id="it1">
+                  <f:validator binding="#{row.bindings.UserName.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="StyleNumber" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.StyleNumber.label}"
+                         id="c64" visible="false">
+                <af:inputText value="#{row.bindings.StyleNumber.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.StyleNumber.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.StyleNumber.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.StyleNumber.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.StyleNumber.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.StyleNumber.tooltip}"
+                              id="it26">
+                  <f:validator binding="#{row.bindings.StyleNumber.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="BpoNumber" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.BpoNumber.label}"
+                         id="c67" visible="false">
+                <af:inputText value="#{row.bindings.BpoNumber.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.BpoNumber.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.BpoNumber.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.BpoNumber.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.BpoNumber.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.BpoNumber.tooltip}"
+                              id="it24">
+                  <f:validator binding="#{row.bindings.BpoNumber.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="DocRcvdDate" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.DocRcvdDate.label}"
+                         id="c42" visible="false">
+                <f:facet name="filter">
+                  <af:inputDate value="#{vs.filterCriteria.DocRcvdDate}"
+                                id="id2"/>
+                </f:facet>
+                <af:inputDate value="#{row.bindings.DocRcvdDate.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.DocRcvdDate.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.DocRcvdDate.mandatory}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.DocRcvdDate.tooltip}"
+                              id="id14">
+                  <f:validator binding="#{row.bindings.DocRcvdDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.MnjCourierInformationLineVO1.hints.DocRcvdDate.format}"/>
+                </af:inputDate>
+              </af:column>
+              <af:column sortProperty="ExpectedDeliveryDate" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.ExpectedDeliveryDate.label}"
+                         id="c38" visible="false">
+                <f:facet name="filter">
+                  <af:inputDate value="#{vs.filterCriteria.ExpectedDeliveryDate}"
+                                id="id9"/>
+                </f:facet>
+                <af:inputDate value="#{row.bindings.ExpectedDeliveryDate.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.ExpectedDeliveryDate.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.ExpectedDeliveryDate.mandatory}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.ExpectedDeliveryDate.tooltip}"
+                              id="id19">
+                  <f:validator binding="#{row.bindings.ExpectedDeliveryDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.MnjCourierInformationLineVO1.hints.ExpectedDeliveryDate.format}"/>
+                </af:inputDate>
+              </af:column>
+              <af:column sortProperty="ActualDeliveryDate" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.ActualDeliveryDate.label}"
+                         id="c31" visible="false">
+                <f:facet name="filter">
+                  <af:inputDate value="#{vs.filterCriteria.ActualDeliveryDate}"
+                                id="id11"/>
+                </f:facet>
+                <af:inputDate value="#{row.bindings.ActualDeliveryDate.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.ActualDeliveryDate.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.ActualDeliveryDate.mandatory}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.ActualDeliveryDate.tooltip}"
+                              id="id15">
+                  <f:validator binding="#{row.bindings.ActualDeliveryDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.MnjCourierInformationLineVO1.hints.ActualDeliveryDate.format}"/>
+                </af:inputDate>
+              </af:column>
+              <af:column sortProperty="SampleDocNo" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.SampleDocNo.label}"
+                         id="c44" visible="false">
+                <af:inputText value="#{row.bindings.SampleDocNo.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.SampleDocNo.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.SampleDocNo.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.SampleDocNo.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.SampleDocNo.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.SampleDocNo.tooltip}"
+                              id="it55">
+                  <f:validator binding="#{row.bindings.SampleDocNo.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.SampleDocNo.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="VersionNo" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.VersionNo.label}"
+                         id="c34" visible="false">
+                <af:inputText value="#{row.bindings.VersionNo.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.VersionNo.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.VersionNo.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.VersionNo.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.VersionNo.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.VersionNo.tooltip}"
+                              id="it53">
+                  <f:validator binding="#{row.bindings.VersionNo.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.VersionNo.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="VersionDate" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.VersionDate.label}"
+                         id="c57" visible="false">
+                <f:facet name="filter">
+                  <af:inputDate value="#{vs.filterCriteria.VersionDate}"
+                                id="id8"/>
+                </f:facet>
+                <af:inputDate value="#{row.bindings.VersionDate.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.VersionDate.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.VersionDate.mandatory}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.VersionDate.tooltip}"
+                              id="id4">
+                  <f:validator binding="#{row.bindings.VersionDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.MnjCourierInformationLineVO1.hints.VersionDate.format}"/>
+                </af:inputDate>
+              </af:column>
+              <af:column sortProperty="RespId" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.RespId.label}"
+                         id="c13" visible="false">
+                <af:inputText value="#{row.bindings.RespId.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.RespId.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.RespId.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.RespId.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.RespId.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.RespId.tooltip}"
+                              id="it28">
+                  <f:validator binding="#{row.bindings.RespId.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.RespId.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="UserId" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.UserId.label}"
+                         id="c28" visible="false">
+                <af:inputText value="#{row.bindings.UserId.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.UserId.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.UserId.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.UserId.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.UserId.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.UserId.tooltip}"
+                              id="it13">
+                  <f:validator binding="#{row.bindings.UserId.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.UserId.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="CreationDate" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.CreationDate.label}"
+                         id="c15" visible="false">
+                <f:facet name="filter">
+                  <af:inputDate value="#{vs.filterCriteria.CreationDate}"
+                                id="id3"/>
+                </f:facet>
+                <af:inputDate value="#{row.bindings.CreationDate.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.CreationDate.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.CreationDate.mandatory}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.CreationDate.tooltip}"
+                              id="id20">
+                  <f:validator binding="#{row.bindings.CreationDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.MnjCourierInformationLineVO1.hints.CreationDate.format}"/>
+                </af:inputDate>
+              </af:column>
+              <af:column sortProperty="CreatedBy" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.CreatedBy.label}"
+                         id="c5" visible="false">
+                <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.CreatedBy.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.CreatedBy.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.CreatedBy.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.CreatedBy.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.CreatedBy.tooltip}"
+                              id="it51">
+                  <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.CreatedBy.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="LastUpdateDate" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.LastUpdateDate.label}"
+                         id="c60" visible="false">
+                <f:facet name="filter">
+                  <af:inputDate value="#{vs.filterCriteria.LastUpdateDate}"
+                                id="id13"/>
+                </f:facet>
+                <af:inputDate value="#{row.bindings.LastUpdateDate.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.LastUpdateDate.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.LastUpdateDate.mandatory}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.LastUpdateDate.tooltip}"
+                              id="id6">
+                  <f:validator binding="#{row.bindings.LastUpdateDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.MnjCourierInformationLineVO1.hints.LastUpdateDate.format}"/>
+                </af:inputDate>
+              </af:column>
+              <af:column sortProperty="LastUpdatedBy" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.LastUpdatedBy.label}"
+                         id="c59" visible="false">
+                <af:inputText value="#{row.bindings.LastUpdatedBy.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.LastUpdatedBy.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.LastUpdatedBy.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.LastUpdatedBy.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.LastUpdatedBy.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.LastUpdatedBy.tooltip}"
+                              id="it44">
+                  <f:validator binding="#{row.bindings.LastUpdatedBy.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.LastUpdatedBy.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="Uom" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.Uom.label}"
+                         id="c49" visible="false">
+                <af:inputText value="#{row.bindings.Uom.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.Uom.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.Uom.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.Uom.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.Uom.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.Uom.tooltip}"
+                              id="it39">
+                  <f:validator binding="#{row.bindings.Uom.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="KnowStyle" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.KnowStyle.label}"
+                         id="c45" visible="false">
+                <af:inputText value="#{row.bindings.KnowStyle.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.KnowStyle.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.KnowStyle.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.KnowStyle.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.KnowStyle.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.KnowStyle.tooltip}"
+                              id="it17">
+                  <f:validator binding="#{row.bindings.KnowStyle.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="InvoiceNo" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.InvoiceNo.label}"
+                         id="c4" visible="false">
+                <af:inputText value="#{row.bindings.InvoiceNo.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.InvoiceNo.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.InvoiceNo.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.InvoiceNo.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.InvoiceNo.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.InvoiceNo.tooltip}"
+                              id="it23">
+                  <f:validator binding="#{row.bindings.InvoiceNo.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="InvoiceDate" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.InvoiceDate.label}"
+                         id="c11" visible="false">
+                <f:facet name="filter">
+                  <af:inputDate value="#{vs.filterCriteria.InvoiceDate}"
+                                id="id1"/>
+                </f:facet>
+                <af:inputDate value="#{row.bindings.InvoiceDate.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.InvoiceDate.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.InvoiceDate.mandatory}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.InvoiceDate.tooltip}"
+                              id="id10">
+                  <f:validator binding="#{row.bindings.InvoiceDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.MnjCourierInformationLineVO1.hints.InvoiceDate.format}"/>
+                </af:inputDate>
+              </af:column>
+              <af:column sortProperty="Weight" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.Weight.label}"
+                         id="c27" visible="false">
+                <af:inputText value="#{row.bindings.Weight.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.Weight.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.Weight.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.Weight.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.Weight.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.Weight.tooltip}"
+                              id="it30">
+                  <f:validator binding="#{row.bindings.Weight.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.Weight.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="WeightType" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.WeightType.label}"
+                         id="c20" visible="false">
+                <af:inputText value="#{row.bindings.WeightType.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.WeightType.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.WeightType.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.WeightType.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.WeightType.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.WeightType.tooltip}"
+                              id="it36">
+                  <f:validator binding="#{row.bindings.WeightType.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="UdNo" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.UdNo.label}"
+                         id="c26" visible="false">
+                <af:inputText value="#{row.bindings.UdNo.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.UdNo.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.UdNo.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.UdNo.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.UdNo.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.UdNo.tooltip}"
+                              id="it29">
+                  <f:validator binding="#{row.bindings.UdNo.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="ExportLcNo" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.ExportLcNo.label}"
+                         id="c17" visible="false">
+                <af:inputText value="#{row.bindings.ExportLcNo.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.ExportLcNo.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.ExportLcNo.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.ExportLcNo.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.ExportLcNo.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.ExportLcNo.tooltip}"
+                              id="it4">
+                  <f:validator binding="#{row.bindings.ExportLcNo.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="DocHandoverDate" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.DocHandoverDate.label}"
+                         id="c62" visible="false">
+                <f:facet name="filter">
+                  <af:inputDate value="#{vs.filterCriteria.DocHandoverDate}"
+                                id="id5"/>
+                </f:facet>
+                <af:inputDate value="#{row.bindings.DocHandoverDate.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.DocHandoverDate.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.DocHandoverDate.mandatory}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.DocHandoverDate.tooltip}"
+                              id="id16">
+                  <f:validator binding="#{row.bindings.DocHandoverDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.MnjCourierInformationLineVO1.hints.DocHandoverDate.format}"/>
+                </af:inputDate>
+              </af:column>
+              <af:column sortProperty="DeliveryDate" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.DeliveryDate.label}"
+                         id="c33" visible="false">
+                <f:facet name="filter">
+                  <af:inputDate value="#{vs.filterCriteria.DeliveryDate}"
+                                id="id7"/>
+                </f:facet>
+                <af:inputDate value="#{row.bindings.DeliveryDate.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.DeliveryDate.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.DeliveryDate.mandatory}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.DeliveryDate.tooltip}"
+                              id="id18">
+                  <f:validator binding="#{row.bindings.DeliveryDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.MnjCourierInformationLineVO1.hints.DeliveryDate.format}"/>
+                </af:inputDate>
+              </af:column>
+              <af:column sortProperty="Remarks" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.Remarks.label}"
+                         id="c35" visible="false">
+                <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.Remarks.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.Remarks.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.Remarks.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.Remarks.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.Remarks.tooltip}"
+                              id="it34">
+                  <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="RemarksCommercial" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.RemarksCommercial.label}"
+                         id="c19" visible="false">
+                <af:inputText value="#{row.bindings.RemarksCommercial.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.RemarksCommercial.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.RemarksCommercial.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.RemarksCommercial.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.RemarksCommercial.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.RemarksCommercial.tooltip}"
+                              id="it54">
+                  <f:validator binding="#{row.bindings.RemarksCommercial.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="NeedDetails" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.NeedDetails.label}"
+                         id="c37" visible="false">
+                <af:inputText value="#{row.bindings.NeedDetails.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.NeedDetails.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.NeedDetails.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.NeedDetails.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.NeedDetails.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.NeedDetails.tooltip}"
+                              id="it20">
+                  <f:validator binding="#{row.bindings.NeedDetails.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="NeedDetailsCommercial" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.NeedDetailsCommercial.label}"
+                         id="c40" visible="false">
+                <af:inputText value="#{row.bindings.NeedDetailsCommercial.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.NeedDetailsCommercial.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.NeedDetailsCommercial.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.NeedDetailsCommercial.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.NeedDetailsCommercial.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.NeedDetailsCommercial.tooltip}"
+                              id="it25">
+                  <f:validator binding="#{row.bindings.NeedDetailsCommercial.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="CompletionFlag" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.CompletionFlag.label}"
+                         id="c16" visible="false">
+                <af:inputText value="#{row.bindings.CompletionFlag.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.CompletionFlag.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.CompletionFlag.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.CompletionFlag.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.CompletionFlag.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.CompletionFlag.tooltip}"
+                              id="it22">
+                  <f:validator binding="#{row.bindings.CompletionFlag.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="CompletionFlagCommercial"
+                         filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.CompletionFlagCommercial.label}"
+                         id="c10" visible="false">
+                <af:inputText value="#{row.bindings.CompletionFlagCommercial.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.CompletionFlagCommercial.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.CompletionFlagCommercial.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.CompletionFlagCommercial.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.CompletionFlagCommercial.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.CompletionFlagCommercial.tooltip}"
+                              id="it46">
+                  <f:validator binding="#{row.bindings.CompletionFlagCommercial.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="ProcessIndicatorCommerFlag"
+                         filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.ProcessIndicatorCommerFlag.label}"
+                         id="c61" visible="false">
+                <af:inputText value="#{row.bindings.ProcessIndicatorCommerFlag.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.ProcessIndicatorCommerFlag.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.ProcessIndicatorCommerFlag.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.ProcessIndicatorCommerFlag.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.ProcessIndicatorCommerFlag.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.ProcessIndicatorCommerFlag.tooltip}"
+                              id="it38">
+                  <f:validator binding="#{row.bindings.ProcessIndicatorCommerFlag.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="CostCenterCode" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.CostCenterCode.label}"
+                         id="c48" visible="false">
+                <af:inputText value="#{row.bindings.CostCenterCode.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.CostCenterCode.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.CostCenterCode.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.CostCenterCode.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.CostCenterCode.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.CostCenterCode.tooltip}"
+                              id="it47">
+                  <f:validator binding="#{row.bindings.CostCenterCode.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.CostCenterCode.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="ItemCodeCombination" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.ItemCodeCombination.label}"
+                         id="c32" visible="false">
+                <af:inputText value="#{row.bindings.ItemCodeCombination.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.ItemCodeCombination.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.ItemCodeCombination.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.ItemCodeCombination.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.ItemCodeCombination.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.ItemCodeCombination.tooltip}"
+                              id="it21">
+                  <f:validator binding="#{row.bindings.ItemCodeCombination.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="TotBudgetAmt" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.TotBudgetAmt.label}"
+                         id="c3" visible="false">
+                <af:inputText value="#{row.bindings.TotBudgetAmt.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.TotBudgetAmt.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.TotBudgetAmt.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.TotBudgetAmt.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.TotBudgetAmt.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.TotBudgetAmt.tooltip}"
+                              id="it3">
+                  <f:validator binding="#{row.bindings.TotBudgetAmt.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.TotBudgetAmt.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column sortProperty="Amount" filterable="true" sortable="true"
+                         headerText="#{bindings.MnjCourierInformationLineVO1.hints.Amount.label}"
+                         id="c66" visible="false">
+                <af:inputText value="#{row.bindings.Amount.inputValue}"
+                              label="#{bindings.MnjCourierInformationLineVO1.hints.Amount.label}"
+                              required="#{bindings.MnjCourierInformationLineVO1.hints.Amount.mandatory}"
+                              columns="#{bindings.MnjCourierInformationLineVO1.hints.Amount.displayWidth}"
+                              maximumLength="#{bindings.MnjCourierInformationLineVO1.hints.Amount.precision}"
+                              shortDesc="#{bindings.MnjCourierInformationLineVO1.hints.Amount.tooltip}"
+                              id="it18">
+                  <f:validator binding="#{row.bindings.Amount.validator}"/>
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MnjCourierInformationLineVO1.hints.Amount.format}"/>
+                </af:inputText>
+              </af:column>
+            </af:table>
+          </af:panelCollection>
+        </af:panelHeader>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:ApproveBean-->
+</jsp:root>
